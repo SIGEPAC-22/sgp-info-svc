@@ -3,7 +3,7 @@ package handler
 import (
 	"context"
 	"github.com/go-kit/kit/endpoint"
-	"sgp-info-svc/internal/GetTypeDocument"
+	GetTypeDocument "sgp-info-svc/internal/getTypeDocument"
 )
 
 func MakeGetTypeDocumentEndpoints(c GetTypeDocument.Service) endpoint.Endpoint {

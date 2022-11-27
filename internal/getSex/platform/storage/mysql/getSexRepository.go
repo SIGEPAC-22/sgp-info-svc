@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"github.com/go-kit/log"
 	goconfig "github.com/iglin/go-config"
-	"sgp-info-svc/internal/GetSex"
+	GetSex "sgp-info-svc/internal/getSex"
 	"sgp-info-svc/kit/constants"
 )
 
