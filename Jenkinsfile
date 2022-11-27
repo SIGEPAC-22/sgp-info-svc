@@ -2,7 +2,7 @@ pipeline {
   agent any
   environment {
     name_final = "sgp-info-svc"
-    DB_CREDS = credentials('db-creds-sgpinfosvc')
+    DB_CREDS = credentials('sgpinfosvc')
   }
   stages {
     stage('Docker Build') {
