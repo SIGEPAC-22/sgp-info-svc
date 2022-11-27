@@ -1,0 +1,6 @@
+.idea
+
+*.yml
+*.yaml
+
+application.yaml
