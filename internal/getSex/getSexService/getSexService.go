@@ -3,7 +3,7 @@ package getSexService
 import (
 	"context"
 	"github.com/go-kit/log"
-	"sgp-info-svc/internal/GetSex"
+	GetSex "sgp-info-svc/internal/getSex"
 	"sgp-info-svc/kit/constants"
 )
 

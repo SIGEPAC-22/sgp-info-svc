@@ -3,7 +3,7 @@ package getTypeDocumentService
 import (
 	"context"
 	"github.com/go-kit/log"
-	"sgp-info-svc/internal/GetTypeDocument"
+	GetTypeDocument "sgp-info-svc/internal/getTypeDocument"
 	"sgp-info-svc/kit/constants"
 )
 

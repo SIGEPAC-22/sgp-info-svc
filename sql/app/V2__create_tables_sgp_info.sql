@@ -1,6 +1,3 @@
-drop database if exists sgp_info_svc;
-create database if not exists sgp_info_svc;
-use sgp_info_svc;
 
 create table ${flyway:database}.ste_state_data
 (
@@ -10,7 +7,7 @@ create table ${flyway:database}.ste_state_data
     ste_state_data_created_by varchar(45) null,
     ste_state_data_modification_date timestamp null,
     ste_state_data_modified_by varchar(45) null
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.ste_state_insert_aud
     BEFORE INSERT ON ${flyway:database}.ste_state_data
@@ -35,7 +32,7 @@ create table ${flyway:database}.dct_document_type
     dct_modification_date timestamp null,
     dct_modified_by varchar(45) null,
     foreign key (dct_id_state_data) references ste_state_data(ste_id_state_data)
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.dct_document_type_insert_aud
     BEFORE INSERT ON ${flyway:database}.dct_document_type
@@ -60,7 +57,7 @@ create table ${flyway:database}.sex_patient
     spt_modification_date timestamp null,
     spt_modified_by varchar(45) null,
     foreign key (spt_id_state_data) references ste_state_data(ste_id_state_data)
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.sex_patient_insert_aud
     BEFORE INSERT ON ${flyway:database}.sex_patient
@@ -87,7 +84,7 @@ create table ${flyway:database}.stm_symptom
     stm_modification_date timestamp null,
     stm_modified_by varchar(45) null,
     foreign key (stm_id_state_data) references ste_state_data(ste_id_state_data)
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.stm_symptom_insert_aud
     BEFORE INSERT ON ${flyway:database}.stm_symptom
@@ -112,7 +109,7 @@ create table ${flyway:database}.cby_comorbidity
     cby_modification_date timestamp null,
     cby_modified_by varchar(45) null,
     foreign key (cby_id_state_data) references ste_state_data(ste_id_state_data)
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.cby_comorbidity_insert_aud
     BEFORE INSERT ON ${flyway:database}.cby_comorbidity
@@ -134,7 +131,7 @@ create table ${flyway:database}.cty_country
     cty_created_by varchar(45) null,
     cty_modification_date timestamp null,
     cty_modified_by varchar(45) null
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.cty_country_insert_aud
     BEFORE INSERT ON ${flyway:database}.cty_country
@@ -160,7 +157,7 @@ create table ${flyway:database}.dpt_department
     dpt_modification_date timestamp null,
     dpt_modified_by varchar(45) null,
     foreign key (dpt_id_country) references cty_country(cty_id_country)
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.dpt_department_insert_aud
     BEFORE INSERT ON ${flyway:database}.dpt_department
@@ -188,7 +185,7 @@ create table ${flyway:database}.spt_state_patient
     spt_modification_date timestamp null,
     spt_modified_by varchar(45) null,
     foreign key (spt_id_state_data) references ste_state_data(ste_id_state_data)
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.spt_state_patient_insert_aud
     BEFORE INSERT ON ${flyway:database}.spt_state_patient
@@ -229,7 +226,7 @@ create table ${flyway:database}.pat_patient
     foreign key (pat_id_country) references cty_country(cty_id_country),
     foreign key (pat_id_patient_sex) references sex_patient(spt_id_sex),
     foreign key (pat_id_document_type) references dct_document_type(dct_id_document_type)
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.pat_patient_insert_aud
     BEFORE INSERT ON ${flyway:database}.pat_patient
@@ -261,7 +258,7 @@ create table ${flyway:database}.pfl_patient_file
     pfl_modified_by varchar(45) null,
     foreign key (pfl_id_patient) references pat_patient(pat_id_patient),
     foreign key (pfl_id_state_patient) references spt_state_patient(spt_id_state_patient)
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.pfl_patient_file_insert_aud
     BEFORE INSERT ON ${flyway:database}.pfl_patient_file
@@ -288,7 +285,7 @@ create table ${flyway:database}.fhs_file_has_sympton
     foreign key (fhs_id_symptom) references stm_symptom(stm_id_sympton),
     foreign key (fhs_id_patient_file) references pfl_patient_file(pfl_id_patient_file)
 
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.fhs_file_has_sympton_insert_aud
     BEFORE INSERT ON ${flyway:database}.fhs_file_has_sympton
@@ -313,7 +310,7 @@ create table ${flyway:database}.fhc_file_has_cormobility
     fhc_modified_by varchar(45) null,
     foreign key (fhc_id_patient_file) references pfl_patient_file(pfl_id_patient_file),
     foreign key (fhc_id_conmorbilities) references cby_comorbidity(cby_id_comorbidity)
-)engine InnoDB;
+);
 
 create trigger ${flyway:database}.fhc_file_has_cormobility_insert_aud
     BEFORE INSERT ON ${flyway:database}.fhc_file_has_cormobility
