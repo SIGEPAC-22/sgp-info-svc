@@ -3,7 +3,7 @@ package handler
 import (
 	"context"
 	"github.com/go-kit/kit/endpoint"
-	"sgp-info-svc/internal/GetSex"
+	GetSex "sgp-info-svc/internal/getSex"
 )
 
 func MakeGetSexEndpoints(c GetSex.Service) endpoint.Endpoint {

@@ -5,7 +5,7 @@ import (
 	"database/sql"
 	"github.com/go-kit/log"
 	goconfig "github.com/iglin/go-config"
-	"sgp-info-svc/internal/GetTypeDocument"
+	GetTypeDocument "sgp-info-svc/internal/getTypeDocument"
 	"sgp-info-svc/kit/constants"
 )
 
