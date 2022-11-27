@@ -1,0 +1,39 @@
+server:
+  port: 90
+
+datasource:
+  host: "sgp-info-svc.csntzsasnlad.us-east-1.rds.amazonaws.com:3306"
+  user: "sgpinfosvc"
+  pass: "test1234"
+  dbname: "sgp_info_svc_dev"
+
+paths:
+  getComorbidity: "/v1/sgp-info-svc/getComorbidity"
+  getSymptom: "/v1/sgp-info-svc/getSymptom"
+  getInfoPatient: "/v1/sgp-info-svc/getInfoPatient"
+  getOneInfoPatient: "/v1/sgp-info-svc/getOneInfoPatient"
+  getOneComorbidity: "/v1/sgp-info-svc/getOneComorbidity"
+  getOneSymptom: "/v1/sgp-info-svc/getOneSymptom"
+  getTypeDocument: "/v1/sgp-info-svc/getTypeDocument"
+  getCountry: "/v1/sgp-info-svc/getCountry"
+  getDepartment: "/v1/sgp-info-svc/getDepartment"
+  getSex: "/v1/sgp-info-svc/getSex"
+  getStatePatient: "/v1/sgp-info-svc/getStatePatient"
+  getDataHistorical: "/v1/sgp-info-svc/getDataHistorical"
+  getInfoPatientFile: "/v1/sgp-info-svc/getInfoPatientFile"
+  getOnePatientFile: "/v1/sgp-info-svc/getOnePatientFile"
+
+
+app-properties:
+  getInfoPatient:
+    dateBirth-Format: '02/01/2006'
+  getComorbidity:
+    idStatusActive: 1
+    idStatusInactive: 2
+  getDataHistorical: true
+
+
+app-PropertiesUpdateBot:
+  date: "2006-01-02"
+  false: false
+  true: true
