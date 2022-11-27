@@ -5,7 +5,7 @@ datasource:
   host: "sgp-info-svc.csntzsasnlad.us-east-1.rds.amazonaws.com:3306"
   user: "sgpinfosvc"
   pass: "test1234"
-  dbname: "sgp_info_svc_qa"
+  dbname: "sgp_info_svc"
 
 paths:
   getComorbidity: "/v1/sgp-info-svc/getComorbidity"
