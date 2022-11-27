@@ -65,9 +65,9 @@ pipeline {
         script {
           sh '''
           docker run --rm flyway/flyway:8.5.1 version
-          docker run --rm -v $WORKSPACE/sql:/flyway/sql -v $WORKSPACE/sql:/flyway/conf flyway/flyway:8.5.1 -user=$DB_CREDS_DEV_USR -password=$DB_CREDS_DEV_PSW migrate
-          docker run --rm -v $WORKSPACE/sql:/flyway/sql -v $WORKSPACE/sql:/flyway/conf flyway/flyway:8.5.1 -user=$DB_CREDS_DEV_USR -password=$DB_CREDS_DEV_PSW validate
-          docker run --rm -v $WORKSPACE/sql:/flyway/sql -v $WORKSPACE/sql:/flyway/conf flyway/flyway:8.5.1 -user=$DB_CREDS_DEV_USR -password=$DB_CREDS_DEV_PSW info
+          docker run --rm -v $WORKSPACE/sql:/flyway/sql -v $WORKSPACE/sql:/flyway/dev/conf flyway/flyway:8.5.1 -user=$DB_CREDS_DEV_USR -password=$DB_CREDS_DEV_PSW migrate
+          docker run --rm -v $WORKSPACE/sql:/flyway/sql -v $WORKSPACE/sql:/flyway/dev/conf flyway/flyway:8.5.1 -user=$DB_CREDS_DEV_USR -password=$DB_CREDS_DEV_PSW validate
+          docker run --rm -v $WORKSPACE/sql:/flyway/sql -v $WORKSPACE/sql:/flyway/dev/conf flyway/flyway:8.5.1 -user=$DB_CREDS_DEV_USR -password=$DB_CREDS_DEV_PSW info
 	  '''
         }
       }
