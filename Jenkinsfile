@@ -62,7 +62,14 @@ pipeline {
         }
       }
       steps {
-        sh 'echo SonarQube'
+        script {
+          sh '''
+          docker run --rm flyway/flyway:9.8.3 version
+          docker run --rm -v $WORKSPACE/sql:/flyway/sql -v $WORKSPACE/sql:/flyway/conf flyway/flyway:9.8.3 -user=$DB_CREDS_USR -password=$DB_CREDS_PSW migrate
+          docker run --rm -v $WORKSPACE/sql:/flyway/sql -v $WORKSPACE/sql:/flyway/conf flyway/flyway:9.8.3 -user=$DB_CREDS_USR -password=$DB_CREDS_PSW validate
+          docker run --rm -v $WORKSPACE/sql:/flyway/sql -v $WORKSPACE/sql:/flyway/conf flyway/flyway:9.8.3 -user=$DB_CREDS_USR -password=$DB_CREDS_PSW info
+	  '''
+        }
       }
     }
     stage('Deploy to DEV') {
