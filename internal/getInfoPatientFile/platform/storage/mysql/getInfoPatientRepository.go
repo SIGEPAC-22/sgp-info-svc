@@ -77,7 +77,9 @@ func (g *GetInfoPatientFileRepo) GetComorbidityPatient(ctx context.Context, idPa
 		resp = append(resp, respDB.NameComorbidity)
 
 	}
-
+	if resp == nil {
+		resp = append(resp, "not available")
+	}
 	return resp, nil
 }
 
