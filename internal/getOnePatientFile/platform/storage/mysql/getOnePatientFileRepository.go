@@ -69,6 +69,10 @@ func (g *GetOnePatientFileRepo) GetComorbidityPatient(ctx context.Context, idPat
 
 	}
 
+	if resp == nil {
+		resp = append(resp, "not available")
+	}
+
 	return resp, nil
 }
 
@@ -91,7 +95,10 @@ func (g *GetOnePatientFileRepo) GetSymptomPatient(ctx context.Context, idPatient
 		resp = append(resp, respDB.NameSymptom)
 
 	}
-
+	if resp == nil {
+		resp = append(resp, "not available")
+	}
+	
 	return resp, nil
 }
 
