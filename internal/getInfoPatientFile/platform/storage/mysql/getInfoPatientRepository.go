@@ -102,7 +102,9 @@ func (g *GetInfoPatientFileRepo) GetSymptomPatient(ctx context.Context, idPatien
 		resp = append(resp, respDB.NameSymptom)
 
 	}
-
+	if resp == nil {
+		resp = append(resp, "not available")
+	}
 	return resp, nil
 }
 
