@@ -22,6 +22,7 @@ type GetOnePatientFileResponse struct {
 	ResponsibleFamily            *string  `json:"responsibleFamily"`
 	ResponsibleFamilyPhoneNumber *string  `json:"responsibleFamilyPhoneNumber"`
 	Sex                          *string  `json:"sex"`
+	Pregnant                     string   `json:"pregnant"`
 	StatePatient                 *string  `json:"statePatient"`
 	AdmissionDate                string   `json:"admissionDate"`
 	HighDate                     string   `json:"highDate"`
