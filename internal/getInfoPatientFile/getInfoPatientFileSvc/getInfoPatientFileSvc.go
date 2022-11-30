@@ -28,6 +28,7 @@ func (s *Service) GetPatientFileService(ctx context.Context) ([]getInfoPatientFi
 
 	for _, respBD := range resp {
 		var row getInfoPatientFile.GetInfoPatientFileResponse
+
 		idPatientFile := respBD.IdPatientFile
 		row.IdPatient = respBD.IdPatient
 		row.IdPatientFile = respBD.IdPatientFile
@@ -38,6 +39,7 @@ func (s *Service) GetPatientFileService(ctx context.Context) ([]getInfoPatientFi
 		row.ResponsibleFamily = respBD.ResponsibleFamily
 		row.ResponsibleFamilyPhoneNumber = respBD.ResponsibleFamilyPhoneNumber
 		row.Sex = respBD.Sex
+		row.Pregnant = respBD.Pregnant
 		row.StatePatient = respBD.StatePatient
 		row.AdmissionDate = respBD.AdmissionDate
 		row.HighDate = respBD.HighDate
