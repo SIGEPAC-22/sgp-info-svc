@@ -37,3 +37,8 @@ app-PropertiesUpdateBot:
   date: "2006-01-02"
   false: false
   true: true
+
+app-PropertiesInfoPatientFile:
+  pregnantTrue: "POSITIVO"
+  pregnantFalse: "NEGATIVO"
+  messageNotAvailable: "No disponible"

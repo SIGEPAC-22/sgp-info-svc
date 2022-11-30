@@ -12,6 +12,7 @@ type SqlGetInfoPatientFile struct {
 	ResponsibleFamily            *string    `json:"responsibleFamily"`
 	ResponsibleFamilyPhoneNumber *string    `json:"responsibleFamilyPhoneNumber"`
 	Sex                          *string    `json:"sex"`
+	Pregnant                     bool       `json:"pregnant"`
 	StatePatient                 *string    `json:"statePatient"`
 	AdmissionDate                time.Time  `json:"admissionDate"`
 	HighDate                     *time.Time `json:"highDate"`
