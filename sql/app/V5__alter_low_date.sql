@@ -1,0 +1,1 @@
+ALTER TABLE ${flyway:database}.pfl_patient_file MODIFY COLUMN pfl_low_date DATE DEFAULT '0001-01-01';
