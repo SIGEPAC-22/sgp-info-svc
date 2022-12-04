@@ -1,0 +1,1 @@
+INSERT INTO ${flyway:database}.cby_comorbidity(cby_name_comorbidity, cby_comorbidity_description) VALUES('PruebaComorbidity', 'PruebaComorbidity');
